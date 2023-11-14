@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Signup</title>
+</head>
+<body>
+   <h2>Signup</h2>
+    <form action="practice.php" method="post">
+        Name: <input type="text" name="signupName" required><br><br>
+        Email (must end with @gmail.com): <input type="email" name="signupEmail" pattern=".+@gmail\.com" required><br><br>
+        Password: <input type="password" name="signupPassword" id="password" required><br><br>
+        Confirm Password: <input type="password" name="confirmPassword" id="confirm_password" required oninput="checkPasswordMatch()"><span id="passwordMatch"></span><br><br>
+        <input type="submit" value="Signup">
+    </form>
+
+    <script>
+        function checkPasswordMatch() {
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirm_password").value;
+            if (password !== confirmPassword) {
+                document.getElementById("passwordMatch").innerHTML = "Passwords do not match!";
+            } else {
+                document.getElementById("passwordMatch").innerHTML = "Passwords match.";
+            }
+        }
+    </script>
+
+    </body>
+    </html>
