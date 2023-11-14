@@ -53,7 +53,7 @@
         $last_id = $conn->insert_id;
         $_SESSION['user_id'] = $last_id;
         echo "New record created successfully. Last inserted ID is: " . $last_id;
-        header("Location: uploads.php");
+        header("Location: login.php");
         exit();
 
       } else {
